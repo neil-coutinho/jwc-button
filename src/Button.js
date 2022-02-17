@@ -18,19 +18,31 @@ const ButtonStyles = styled.button`
   padding: 10px 15px;
   text-transform: uppercase;
   font-weight: bold;
+  border-radius: 3px;
 `;
 
 const ButtonFill = styled(ButtonStyles)`
   background: ${COLORS.primary};
+  color: ${COLORS.white};
+`;
+
+const ButtonOutline = styled(ButtonStyles)`
+  background: ${COLORS.white};
+  color: ${COLORS.primary};
+`;
+
+const ButtonGhost = styled(ButtonStyles)`
+  background: none;
+  color: ${COLORS.gray};
 `;
 
 const Button = ({ variant, size, children }) => {
   if (variant === "fill") {
     return <ButtonFill>{children}</ButtonFill>;
   } else if (variant === "outline") {
-    return <ButtonStyles>{children}</ButtonStyles>;
+    return <ButtonOutline>{children}</ButtonOutline>;
   } else if (variant === "ghost") {
-    return <ButtonStyles>{children}</ButtonStyles>;
+    return <ButtonGhost>{children}</ButtonGhost>;
   }
 
   return null;
