@@ -14,30 +14,51 @@ import { COLORS } from "./constants";
 //   black: "hsl(0deg 0% 0%)"
 // };
 
+const paddingSizer = ({ size }) => {
+  if (size == "medium") {
+    return `.625rem .875rem`;
+  } else if (size == "large") {
+    return `.875rem 1rem`;
+  }
+};
+const fontSizer = ({ size }) => {
+  if (size == "medium") {
+    return `.875rem`;
+  } else if (size == "large") {
+    return `1rem`;
+  }
+};
 const ButtonStyles = styled.button`
-  padding: 10px 15px;
+  padding: 0.5rem 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 3px;
   box-shadow: none;
+  font-size: 0.625rem;
 `;
 
 const ButtonFill = styled(ButtonStyles)`
   background: ${COLORS.primary};
   color: ${COLORS.white};
   border-color: transparent;
+  padding: ${paddingSizer};
+  font-size: ${fontSizer};
 `;
 
 const ButtonOutline = styled(ButtonStyles)`
   background: ${COLORS.white};
   color: ${COLORS.primary};
   border-color: ${COLORS.primary};
+  padding: ${paddingSizer};
+  font-size: ${fontSizer};
 `;
 
 const ButtonGhost = styled(ButtonStyles)`
   background: none;
   color: ${COLORS.transparentGray75};
   border-color: transparent;
+  padding: ${paddingSizer};
+  font-size: ${fontSizer};
 
   &:focus {
     border-color: ${COLORS.transparentGray75};
@@ -46,11 +67,11 @@ const ButtonGhost = styled(ButtonStyles)`
 
 const Button = ({ variant, size, children }) => {
   if (variant === "fill") {
-    return <ButtonFill>{children}</ButtonFill>;
+    return <ButtonFill size={size}>{children}</ButtonFill>;
   } else if (variant === "outline") {
-    return <ButtonOutline>{children}</ButtonOutline>;
+    return <ButtonOutline size={size}>{children}</ButtonOutline>;
   } else if (variant === "ghost") {
-    return <ButtonGhost>{children}</ButtonGhost>;
+    return <ButtonGhost size={size}>{children}</ButtonGhost>;
   }
 
   return null;
