@@ -19,21 +19,29 @@ const ButtonStyles = styled.button`
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 3px;
+  box-shadow: none;
 `;
 
 const ButtonFill = styled(ButtonStyles)`
   background: ${COLORS.primary};
   color: ${COLORS.white};
+  border-color: transparent;
 `;
 
 const ButtonOutline = styled(ButtonStyles)`
   background: ${COLORS.white};
   color: ${COLORS.primary};
+  border-color: ${COLORS.primary};
 `;
 
 const ButtonGhost = styled(ButtonStyles)`
   background: none;
-  color: ${COLORS.gray};
+  color: ${COLORS.transparentGray75};
+  border-color: transparent;
+
+  &:focus {
+    border-color: ${COLORS.transparentGray75};
+  }
 `;
 
 const Button = ({ variant, size, children }) => {
