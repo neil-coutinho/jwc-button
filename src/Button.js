@@ -16,9 +16,9 @@ import { COLORS } from "./constants";
 
 const paddingSizer = ({ size }) => {
   if (size == "medium") {
-    return `.625rem .875rem`;
+    return `.625rem 1rem`;
   } else if (size == "large") {
-    return `.875rem 1rem`;
+    return `.625rem 1rem`;
   }
 };
 const fontSizer = ({ size }) => {
@@ -29,11 +29,11 @@ const fontSizer = ({ size }) => {
   }
 };
 const ButtonStyles = styled.button`
-  padding: 0.5rem 0.5rem;
+  padding: 0.625rem 1rem;
   text-transform: uppercase;
   border-radius: 3px;
   box-shadow: none;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
 `;
 
 const ButtonFill = styled(ButtonStyles)`
