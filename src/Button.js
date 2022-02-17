@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { COLORS } from "./constants";
 
 const Button = ({ variant, size, children }) => {
-  return "TODO";
+  return <button>{children}</button>;
 };
 
 export default Button;
