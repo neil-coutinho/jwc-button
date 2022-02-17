@@ -31,10 +31,9 @@ const fontSizer = ({ size }) => {
 const ButtonStyles = styled.button`
   padding: 0.5rem 0.5rem;
   text-transform: uppercase;
-  font-weight: bold;
   border-radius: 3px;
   box-shadow: none;
-  font-size: 0.625rem;
+  font-size: 0.875rem;
 `;
 
 const ButtonFill = styled(ButtonStyles)`
@@ -43,6 +42,10 @@ const ButtonFill = styled(ButtonStyles)`
   border-color: transparent;
   padding: ${paddingSizer};
   font-size: ${fontSizer};
+
+  &:hover {
+    background-color: ${COLORS.primaryLight};
+  }
 `;
 
 const ButtonOutline = styled(ButtonStyles)`
@@ -51,6 +54,10 @@ const ButtonOutline = styled(ButtonStyles)`
   border-color: ${COLORS.primary};
   padding: ${paddingSizer};
   font-size: ${fontSizer};
+
+  &:hover {
+    background-color: ${COLORS.offwhite};
+  }
 `;
 
 const ButtonGhost = styled(ButtonStyles)`
@@ -62,6 +69,11 @@ const ButtonGhost = styled(ButtonStyles)`
 
   &:focus {
     border-color: ${COLORS.transparentGray75};
+  }
+
+  &:hover {
+    background-color: ${COLORS.transparentGray15};
+    color: ${COLORS.black};
   }
 `;
 
